@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "steel-autonomy-258422",
+  "private_key_id": "437ae77bda729ac4b770bb45fd4dad77a7090a06",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCy1I9uz07e014a\nFFC6jwQn6Gs5ADLsBqHf2snZI9uUutZ6L/3GJYGw+C0T5cviMlpcKSSOgJPoBzgA\n5q03zuFxseKn7fRaHlVe4CHH7bs0Nog+hXji12E9qfHEMnKftSxv5ugMOaXaubGP\nuGJxYVBORkyQQLMNDZ5b5TKAbjpeMpuXMK4hhS0uyAlS6EqdNljiEE579RsUFo7k\nASJce93dzBa14K3m3W/YWwRjEGdT8E08mE783WWaIQWzZ/R2+vDjKLowLQ+aCNLF\n0rtUNu4fZMkPAyGe5YzarERvb/MIZWDmlbBASR1n0ivjn2VOv8DCacWaD2Om9P6A\nh1OM76RdAgMBAAECggEAAWS70sEuyxZ5ytFLwEGYsugaTs+ypjlgtV3jzmIp3uNg\nNSeJpQsIEyEqPd1SzKtzGIyqYAvwBVNkpiezoGUbPIj4vp6BIKSEdrhUjySF8idx\n8s8ymKHq48PoT8ilXMbuovJ2kcxe/NLTTxWldTNFepX8dWJz2eAwJG/w0Zxm33AA\ns4YbqwvIXYzig6ZE8bV3jBU0L5cRZgq99uSlhvkCSzdQVHk+0s6WjTY18X514zvz\ne8OFrNFRgNLOjTl4GRqTfEuw+aqb2POhKM7d3sUbs6xFdtgxcsTBjmS4tsnlWmnG\nfA2l1wTG8r32VIAAvc9JTWNW9hJ4ME+du596AZPoyQKBgQD3GF6XdMe9hgJQueSh\nDvkuOyuxBzyo57DsuQ0AMM3aFwvoziBo/gwEi/Us4+Gg1I1QN68cdx1+mUTl/q78\nLG33ez3POz4gXZM/eq6qKoxHUdB3GsILkiILYa1lrR0JpftNT0xSpom3SsS2x6yj\nUSJTsi/Cmi1SIPUHCSd83V7/uwKBgQC5RmX1apFGt5F9ikPvcuC0YXzUkAlJntAe\nDWbbbx4IJKgsmp2d0H8UtRLWbc7xrSjiU7ew2SYMMs/v0n2wEvFSMuUN8UflaMre\nAwxpYVeVqouJlQKLZzwqNHemHQS+6F2NhdBMb5X34N4pR0bB+lvOrgkdiD4RlISQ\nHMUtxBXuxwKBgQCZ6W4SPUWlgfGzQvdscx03dNf0PyPDuf30lhfJBJ1UuYJLkwmR\nHJ1zv5IKUi/atEsJqoXC31dZ4jKOaKOqpCojO3r2uFosYt0zb0GY8UPLsOR/LAWu\nm2nlWQRfDwPFXMQ6Faje2qlxqHr7t0iLuh/9rkIdn1eXjrvRlBwqpOFlvQKBgAH5\n4T6D23bQoGmhXuYf6Iuj+ovd2WuCmR+o7u7qOXzGv1ByebnkLmbPI5tL4ogrW6NG\nV1A4kLJSnGsnaJXHLfG9fznt1+F3g6poh+pb0m5TOlfGUhegi0C7/Ia2CoXqvoyy\n36zhB810BYqVKwkInZAPxSMef+L6HYvX8rZxP/ajAoGAC/n/tibiStt08f1wL3tV\n+7oM/XpMPIqbJn/giBah0TLzxYOiOPr2yQjWMMftd83vYDrtxJ6Cy274ifd+CETI\nf9zGt8ijWxYSeFNzR1chPmSUtbeRkr3JamYnOBQ0QkvHuMAQZ31rciFrJVBn31eD\n4K05MwVREYnsn2q9yPMTxxU=\n-----END PRIVATE KEY-----\n",
+  "client_email": "bugtracker@steel-autonomy-258422.iam.gserviceaccount.com",
+  "client_id": "103860299519518230478",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/bugtracker%40steel-autonomy-258422.iam.gserviceaccount.com"
+}
