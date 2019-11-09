@@ -10,4 +10,5 @@ Ferramenta para auxiliar no relato de bugs por meio do preenchimento dos seguint
 - A saída recebida.
 
 Ao enviar a solicitação, as informações relatadas no formulário preenchem uma planilha no Google Drive.
+
 As informações contidas nesta planilha servem para análise e conserto dos bugs.
