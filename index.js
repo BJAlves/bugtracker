@@ -38,14 +38,14 @@ app.post('/', async(request, response) => {
         // console.log(info)
         const worksheet = info.worksheets[worksheetIndex]
         await promisify(worksheet.addRow)({
-            nome: request.body.name, 
+            name: request.body.name, 
             email: request.body.email,
-            classificacao: request.body.issueType,
-            reproducao: request.body.howToReproduce,
-            saida_esperada: request.body.expectedOutput,
-            saida_recebida: request.body.receivedOutput,
-            user_agent: request.body.userAgent,
-            user_date: request.body.userDate,
+            issueType: request.body.issueType,
+            howToReproduce: request.body.howToReproduce,
+            expectedOutput: request.body.expectedOutput,
+            receivedOutput: request.body.receivedOutput,
+            userAgent: request.body.userAgent,
+            userDate: request.body.userDate,
             source: request.query.source || 'direct'
         })
 
@@ -70,13 +70,6 @@ app.post('/', async(request, response) => {
         // pega o erro no provedor depois de subir para o servidor
         console.log(err)
     }     
-})
-
-app.get('/soma', (request, response) => {
-    const a = parseInt(request.query.a)
-    const b = parseInt(request.query.b)
-    const soma = a + b
-    response.send('<h1>A soma é: ' + soma + '</h1>')
 })
 
 app.listen(3000, (err) => {
