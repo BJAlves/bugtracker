@@ -13,4 +13,6 @@ Ao enviar a solicitação, as informações relatadas no formulário preenchem u
 
 As informações contidas nesta planilha servem para análise e conserto dos bugs.
 
-Endereço do BugTracker: https://bugtracker.bjalvesb.now.sh/
+<p>Acesso ao BugTracker pelo link: <a href="https://bugtracker.bjalvesb.now.sh/" target="_blank">https://bugtracker.bjalvesb.now.sh/</a></p>
+
+ 
