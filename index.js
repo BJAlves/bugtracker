@@ -4,13 +4,18 @@ const app = express()
 const path = require('path')
 // tratamento de informacao do formulario
 const bodyParser = require('body-parser')
-
+// metodo promisify: faz parte do core do node
+// pegando somente promisify de dentro do util
+const { promisify } = require('util')
+const sgMail = require('@sendgrid/mail')
 const GoogleSpreadsheet = require('google-spreadsheet')
 const credentials = require('./bugtracker.json')
 
 // configuracoes
 const docId = '1NLkjeuHLeCdSU7WxVww0zDuYY4GDDghQX-38a2dAw_4'
 const worksheetIndex = 0
+
+const sendGridKey = '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'
 
 app.set('view engine', 'ejs')
 app.set('views', path.resolve(__dirname, 'views'))
@@ -24,30 +29,47 @@ app.get('/', (request, response) => {
     response.render('home')
 })
 
-app.post('/', (request, response) => {
-    const doc = new GoogleSpreadsheet(docId)
-    doc.useServiceAccountAuth(credentials, (err) => {
-        if(err) {
-            console.log('nao foi possivel abrir a planilha')
-        } else {
-            console.log('planilha aberta')
-            doc.getInfo((err, info) => {
-                // console.log(info)
-                const worksheet = info.worksheets[worksheetIndex]
-                worksheet.addRow({
-                    nome: request.body.name, 
-                    email: request.body.email,
-                    classificacao: request.body.issueType,
-                    reproducao: request.body.howToReproduce,
-                    saida_esperada: request.body.expectedOutput,
-                    saida_recebida: request.body.receivedOutput
-                }, err => {
-                    response.send('bug reportado com sucesso!')
-                    console.log('linha inserida')
-                })
-            })
+app.post('/', async(request, response) => {
+    try {
+        const doc = new GoogleSpreadsheet(docId)
+        await promisify(doc.useServiceAccountAuth)(credentials)
+        console.log('planilha aberta')
+        const info = await promisify(doc.getInfo)()
+        // console.log(info)
+        const worksheet = info.worksheets[worksheetIndex]
+        await promisify(worksheet.addRow)({
+            nome: request.body.name, 
+            email: request.body.email,
+            classificacao: request.body.issueType,
+            reproducao: request.body.howToReproduce,
+            saida_esperada: request.body.expectedOutput,
+            saida_recebida: request.body.receivedOutput,
+            user_agent: request.body.userAgent,
+            user_date: request.body.userDate,
+            source: request.query.source || 'direct'
+        })
+
+        // se o bug for critico
+        if(request.body.issueType === 'CRITICAL') {
+            sgMail.setApiKey(sendGridKey);
+            const msg = {
+                to: 'bjalvesb@gmail.com',
+                from: 'bjalvesb@gmail.com',
+                subject: 'BUG crítico reportado',
+                text: `
+                    O usuário ${request.body.name} reportou um problema.
+                `,
+                html: `O usuário ${request.body.name} reportou um problema.`,
+            };
+            await sgMail.send(msg);
         }
-    })   
+
+        response.send('Bug reportado com sucesso!')
+    } catch(err) {
+        response.send('Erro ao enviar formulário')
+        // pega o erro no provedor depois de subir para o servidor
+        console.log(err)
+    }     
 })
 
 app.get('/soma', (request, response) => {
