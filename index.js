@@ -64,7 +64,7 @@ app.post('/', async(request, response) => {
             await sgMail.send(msg);
         }
 
-        response.send('Bug reportado com sucesso!')
+        response.render('sucesso')
     } catch(err) {
         response.send('Erro ao enviar formulário')
         // pega o erro no provedor depois de subir para o servidor
